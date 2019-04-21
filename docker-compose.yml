@@ -1,0 +1,18 @@
+version: '1'
+services:
+  myapp:
+    image: 'wwalienathome/bitnami-codeigniter-debug:latest'
+    ports:
+      - '8000:8000'
+      - '9000:9000'
+    volumes:
+      - '.:/app'
+    depends_on:
+      - mariadb
+    environment:
+      # change this address to your host machines IPAddress
+      XDEBUG_CONFIG: remote_host=127.0.0.1  
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
