@@ -1,10 +1,9 @@
-version: '1'
+version: '2'
 services:
   myapp:
     image: 'wwalienathome/bitnami-codeigniter-debug:latest'
     ports:
       - '8000:8000'
-      - '9000:9000'
     volumes:
       - '.:/app'
     depends_on:

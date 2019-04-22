@@ -5,7 +5,7 @@ LABEL maintainer wwalien <wwalien@yahoo.com>
 
 # Configure xdebugger (todo: configuration for ZendDebugger
 RUN yes | echo "[xdebug]"                                                                               >  /opt/bitnami/php/etc/conf.d/xdebug.ini \
-&& echo "zend_extension= zend_extension=/opt/bitnami/php/lib/php/extensions/xdebug.so"                  >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
+&& echo "zend_extension=/opt/bitnami/php/lib/php/extensions/xdebug.so"                                  >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
 && echo "xdebug.remote_enable = 1 ; Wont work without this option"                                      >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
 && echo "xdebug.remote_host = 10.10.1.1 ; IP address of my host machine"                                >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
 && echo "xdebug.remote_connect_back = 1"                                                                >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
