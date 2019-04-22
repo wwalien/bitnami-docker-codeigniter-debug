@@ -8,7 +8,8 @@ LABEL maintainer wwalien <wwalien@yahoo.com>
 RUN yes | echo "[xdebug]"                                                                               >  /opt/bitnami/php/etc/conf.d/xdebug.ini \
 && echo "zend_extension=/opt/bitnami/php/lib/php/extensions/xdebug.so"                                  >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
 && echo "xdebug.remote_enable = 1 ; Wont work without this option"                                      >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
-&& echo "xdebug.remote_connect_back = 1"                                                                >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
+&& echo "xdebug.remote_connect_back = 0"                                                                >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
+&& echo "xdebug.remote_host = host.docker.internal"                                                                     >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
 && echo "xdebug.remote_port = 9000"                                                                     >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
 && echo "xdebug.remote_autostart = 1 ; Important: automatically attempt to connect to debugging client" >> /opt/bitnami/php/etc/conf.d/xdebug.ini \
 && echo "xdebug.max_nesting_level = 512"                                                                >> /opt/bitnami/php/etc/conf.d/xdebug.ini
