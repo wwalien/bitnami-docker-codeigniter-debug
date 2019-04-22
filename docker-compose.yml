@@ -10,7 +10,7 @@ services:
       - mariadb
     environment:
       # change this address to your host machines IPAddress
-      XDEBUG_CONFIG: remote_host=127.0.0.1  
+      XDEBUG_CONFIG: remote_host=host.docker.internal  
   mariadb:
     image: 'bitnami/mariadb:latest'
     environment:
